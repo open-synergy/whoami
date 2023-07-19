@@ -4,7 +4,8 @@ services:
   whoami:
     image: "traefik/whoami"
     container_name: "whoami"
-    
+    env_file:
+      - ./environment    
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.whoami.rule=Host(`${TREAFIK_HOSTNAME}`)"
